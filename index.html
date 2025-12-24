@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>나의 여행 다이어리 💖</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'pastel-blue': '#A0E9FF',
+            'pastel-pink': '#F0B2E7',
+            'pastel-yellow': '#FFF59D',
+            'pastel-green': '#B9F6CA',
+            'light-gray': '#F9F9F9',
+          },
+          fontFamily: {
+            'dongle': ['Dongle', 'sans-serif'],
+            'cute': ['Cute Font', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@400;700&family=Cute+Font&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Dongle', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-pastel-pink min-h-screen flex items-center justify-center py-10">
+
+  <div class="bg-light-gray rounded-3xl shadow-xl p-8 max-w-md w-full">
+    <h1 class="text-4xl font-bold text-center mb-8 text-pastel-blue font-cute">나의 여행 다이어리 💖</h1>
+
+    <div class="space-y-6">
+      <!-- 여행 기록 카드 (태안) -->
+      <div class="rounded-2xl overflow-hidden shadow-md">
+        <img src="https://source.unsplash.com/400x300/?tae-an" alt="태안 여행 사진" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h2 class="text-2xl font-semibold text-gray-700 font-cute">힐링 여행, 태안 🏖️</h2>
+          <p class="text-gray-600">📅 2025년 8월 16일 ~ 2025년 8월 17일</p>
+          <p class="text-gray-800 mt-2">바다 보면서 멍 때리고 맛있는 해산물 🦀 먹기! 노을 지는 모습이 최고 👍</p>
+          <p class="text-sm text-gray-500 mt-2">#태안 #바다 #해산물 #노을</p>
+        </div>
+      </div>
+
+      <!-- 여행 기록 카드 (군산) -->
+      <div class="rounded-2xl overflow-hidden shadow-md">
+        <img src="https://source.unsplash.com/400x300/?gunsan" alt="군산 여행 사진" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h2 class="text-2xl font-semibold text-gray-700 font-cute">시간 여행자, 군산 🕰️</h2>
+          <p class="text-gray-600">📅 2025년 10월 11일 ~ 2025년 10월 12일</p>
+          <p class="text-gray-800 mt-2">옛날 건물들 구경하고 이성당 빵집에서 빵 잔뜩 사기! 🥐🥖</p>
+          <p class="text-sm text-gray-500 mt-2">#군산 #시간여행 #이성당 #빵</p>
+        </div>
+      </div>
+
+      <!-- 여행 기록 카드 (서울 홍대) -->
+      <div class="rounded-2xl overflow-hidden shadow-md">
+        <img src="https://source.unsplash.com/400x300/?hongdae" alt="홍대 여행 사진" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h2 class="text-2xl font-semibold text-gray-700 font-cute">에너지 넘치는 홍대 🔥</h2>
+          <p class="text-gray-600">📅 2025년 12월 13일</p>
+          <p class="text-gray-800 mt-2">길거리 공연 보면서 맛있는 떡볶이 냠냠 😋 쇼핑도 빼놓을 수 없지! 🛍️</p>
+          <p class="text-sm text-gray-500 mt-2">#홍대 #길거리공연 #떡볶이 #쇼핑</p>
+        </div>
+      </div>
+
+      <!-- 여행 기록 카드 (서울 성수) -->
+      <div class="rounded-2xl overflow-hidden shadow-md">
+        <img src="https://source.unsplash.com/400x300/?seongsu" alt="성수 여행 사진" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h2 class="text-2xl font-semibold text-gray-700 font-cute">힙스터들의 놀이터, 성수 🏭</h2>
+          <p class="text-gray-600">📅 2025년 12월 20일 ~ 2025년 12월 21일</p>
+          <p class="text-gray-800 mt-2">새로운 팝업 스토어 구경하고 맛있는 디저트 🍰 먹기! 인생샷 건지기 필수 ✨</p>
+          <p class="text-sm text-gray-500 mt-2">#성수 #카페 #팝업스토어 #인생샷</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-6 text-center">
+      <button id="addTripButton" class="bg-pastel-yellow hover:bg-pastel-green text-white font-bold py-3 px-6 rounded-full transition-colors duration-300 font-cute">
+        새로운 여행 추가하기 ➕
+      </button>
+    </div>
+
+    <!-- 새로운 여행 추가 폼 -->
+    <div id="tripForm" class="mt-6 hidden">
+      <h2 class="text-2xl font-semibold text-gray-700 text-center mb-4 font-cute">새로운 여행 기록 ✍️</h2>
+      <form id="newTripForm" class="space-y-4">
+        <div>
+          <label for="title" class="block text-gray-700 text-sm font-bold mb-2 font-cute">여행지 이름</label>
+          <input type="text" id="title" name="title" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="예: 부산 여행">
+        </div>
+        <div>
+          <label for="date" class="block text-gray-700 text-sm font-bold mb-2 font-cute">여행 기간</label>
+          <input type="text" id="date" name="date" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="예: 2025년 5월 5일 ~ 2025년 5월 9일">
+        </div>
+        <div>
+          <label for="description" class="block text-gray-700 text-sm font-bold mb-2 font-cute">여행 후기</label>
+          <textarea id="description" name="description" rows="3" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="예: 해운대 바다 최고!"></textarea>
+        </div>
+        <div>
+          <label for="image" class="block text-gray-700 text-sm font-bold mb-2 font-cute">이미지 URL</label>
+          <input type="text" id="image" name="image" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="이미지 URL을 입력하세요">
+        </div>
+        <div class="text-center">
+          <button type="submit" class="bg-pastel-blue hover:bg-pastel-pink text-white font-bold py-2 px-4 rounded-full transition-colors duration-300 font-cute">
+            기록 저장 💾
+          </button>
+          <button type="button" id="cancelButton" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-full transition-colors duration-300 font-cute">
+            취소 ❌
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const addTripButton = document.getElementById('addTripButton');
+    const tripForm = document.getElementById('tripForm');
+    const newTripForm = document.getElementById('newTripForm');
+    const cancelButton = document.getElementById('cancelButton');
+
+    addTripButton.addEventListener('click', () => {
+      tripForm.classList.remove('hidden');
+    });
+
+    cancelButton.addEventListener('click', () => {
+      tripForm.classList.add('hidden');
+    });
+
+    newTripForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const title = document.getElementById('title').value;
+      const date = document.getElementById('date').value;
+      const description = document.getElementById('description').value;
+      const image = document.getElementById('image').value;
+
+      // 새로운 여행 기록 카드 생성
+      const newTripCard = document.createElement('div');
+      newTripCard.classList.add('rounded-2xl', 'overflow-hidden', 'shadow-md');
+      newTripCard.innerHTML = `
+        <img src="${image}" alt="${title}" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h2 class="text-2xl font-semibold text-gray-700 font-cute">${title}</h2>
+          <p class="text-gray-600">📅 ${date}</p>
+          <p class="text-gray-800 mt-2">${description}</p>
+        </div>
+      `;
+
+      // 여행 기록 카드 목록에 추가
+      const tripList = document.querySelector('.space-y-6');
+      tripList.appendChild(newTripCard);
+
+      // 폼 초기화 및 숨기기
+      newTripForm.reset();
+      tripForm.classList.add('hidden');
+    });
+  </script>
+
+</body>
+</html>
